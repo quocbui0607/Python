@@ -1,0 +1,15 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    <h1>This is template Django test</h1>
+    <p>Hello guys, my name is {{name}}</p>
+    <h2>My properties:</h2>
+    <ul>
+        {% for item in items %}
+            {% if item != 'Máy tính' %}
+                <li>{{ item }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

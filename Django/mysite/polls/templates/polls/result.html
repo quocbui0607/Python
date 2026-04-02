@@ -1,0 +1,14 @@
+{% extends 'polls/base.html' %}
+
+{% block content123 %}
+    {% if q %}
+        <h1>{{ q.question_text}}</h1>
+        <p>Kết quả của cuộc bình chọn:</p>
+        {% for item in q.choice_set.all %}
+        <p>{{item.choice_text}} : <span color="blace" style="font-weight: bold">{{item.vote}}</span></p>
+        {% endfor %}
+    {% else %}
+        <h2 style="color:red">Không có dữ liệu câu trả lời nào !!!</h2>
+    {% endif %}
+    <a href="{% url 'polls:view_list' %}">Return</a>
+{% endblock %}
